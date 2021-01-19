@@ -29,5 +29,29 @@ namespace final_done_now.librarian
             r1.DataSource = dt;
             r1.DataBind();
         }
+
+        public string checkvideo(object myvalue, object id)
+        {
+            if ((string)myvalue == "")
+            {
+                return myvalue.ToString();
+            }
+            else
+            {
+                return "<a href='delete_files.aspx?id="+id+"' style='color:red'> delete video</a>";
+            }
+        }
+        public string checkpdf(object myvalue1, object id1)
+        {
+            if ((string)myvalue1 == "")
+            {
+                return myvalue1.ToString();
+            }
+            else
+            {
+                return "<a href='delete_files.aspx?id1=" + id1 + "' style='color:red'> delete video</a>";
+            }
+        }
+
     }
 }

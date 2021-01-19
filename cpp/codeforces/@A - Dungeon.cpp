@@ -11,6 +11,10 @@ bool cases() {
 }
 
 int main() {
+    #ifndef ONLINE_JUDGE
+    freopen("input.txt","r",stdin);
+    freopen("output.txt","w",stdout);
+    #endif
     int test;
     std::cin >> test;
     for (int index = 0; index < test; ++index) {

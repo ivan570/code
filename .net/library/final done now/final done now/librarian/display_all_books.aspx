@@ -19,6 +19,7 @@
                                 <th scope="col">author name</th>
                                 <th scope="col">isbn</th>
                                 <th scope="col">available qty</th>
+                                <th scope="col">Edit books</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -27,11 +28,12 @@
                         <tr>
                             <td><img src="<%#Eval("books_image")%>" height="100" width="100"/></td>
                             <td><%#Eval("books_title")%></td>
-                            <td><a target="_blank" href="<%#Eval("books_pdf")%>" >pdf</a></td>
-                            <td><a target="_blank" href="<%#Eval("books_video")%>" >video</a></td>
+                            <td><%#Eval("books_pdf")%>" <br /> <%#checkpdf(Eval("books_pdf"), Eval("id")) %></td>
+                            <td><%#Eval("books_video")%>"<br /> <%#checkvideo(Eval("books_video"), Eval("id")) %></td>
                             <td><%#Eval("books_author_name")%></td>
                             <td><%#Eval("books_isbn")%></td>
                             <td><%#Eval("available_qty")%></td>
+                            <td><a href="edit_books.aspx?id=<%#Eval("id") %>">Edit</a></td>
                         </tr>
                     </ItemTemplate>
                     <FooterTemplate>
