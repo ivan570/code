@@ -24,7 +24,7 @@ namespace final_done_now.librarian
             }
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from student_registration";
+            cmd.CommandText = "select * from student_registration ORDER BY approved";
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
