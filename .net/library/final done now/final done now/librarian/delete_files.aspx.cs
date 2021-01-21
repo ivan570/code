@@ -18,6 +18,10 @@ namespace final_done_now.librarian
             {
                 con.Open();
             }
+            if (Session["librarian"] == null)
+            {
+                Response.Redirect("login.aspx");
+            }
 
             if (Request.QueryString["id"] != null)
             {
@@ -26,14 +30,20 @@ namespace final_done_now.librarian
                 cmd.CommandText = "update ibooks set books_video='' where id='" + Request.QueryString["id"] + "'";
                 cmd.ExecuteNonQuery();
             }
-            else
+            else if (Request.QueryString["id1"] != null)
             {
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = "update ibooks set books_pdf='' where id='" + Request.QueryString["id1"] + "'";
                 cmd.ExecuteNonQuery();
             }
-
+            else
+            {
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "delete ibooks where id='" + Request.QueryString["id2"] + "'";
+                cmd.ExecuteNonQuery();
+            }
             Response.Redirect("display_all_books.aspx");
         }
     }

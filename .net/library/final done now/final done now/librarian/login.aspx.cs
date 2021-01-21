@@ -14,6 +14,7 @@ namespace final_done_now.librarian
         SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='D:\code\.net\library\final done now\final done now\App_Data\lms.mdf';Integrated Security=True");
         protected void Page_Load(object sender, EventArgs e)
         {
+           
             if (con.State == ConnectionState.Open)
             {
                 con.Close();
@@ -35,6 +36,7 @@ namespace final_done_now.librarian
 
             if (i > 0)
             {
+                Session["librarian"] = username.Text;
                 Response.Redirect("demo.aspx");
             }
             else

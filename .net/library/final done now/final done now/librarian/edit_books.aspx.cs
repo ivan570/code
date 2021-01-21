@@ -19,6 +19,10 @@ namespace final_done_now.librarian
             {
                 con.Open();
             }
+            if (Session["librarian"] == null)
+            {
+                Response.Redirect("login.aspx");
+            }
             id = Convert.ToInt32(Request.QueryString["id"].ToString());
 
             if (IsPostBack)

@@ -18,6 +18,10 @@ namespace final_done_now.librarian
             {
                 con.Open();
             }
+            if (Session["librarian"] == null)
+            {
+                Response.Redirect("login.aspx");
+            }
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "select * from ibooks";

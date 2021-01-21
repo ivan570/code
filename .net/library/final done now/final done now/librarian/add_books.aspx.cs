@@ -18,6 +18,10 @@ namespace final_done_now.librarian
             {
                 con.Open();
             }
+            if(Session["librarian"] == null)
+            {
+                Response.Redirect("login.aspx");
+            }
         }
 
         protected void b1_Click(object sender, EventArgs e)

@@ -57,3 +57,5 @@ D:\code\.net\library\final done now\final done now\obj\Debug\final done now.cspr
 D:\code\.net\library\final done now\final done now\obj\Debug\final done now.csproj.CopyComplete
 D:\code\.net\library\final done now\final done now\obj\Debug\final done now.dll
 D:\code\.net\library\final done now\final done now\obj\Debug\final done now.pdb
+D:\code\.net\library\final done now\final done now\bin\Newtonsoft.Json.dll
+D:\code\.net\library\final done now\final done now\bin\Newtonsoft.Json.xml
