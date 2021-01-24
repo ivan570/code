@@ -1,6 +1,6 @@
 #include <iostream>
 
-inline void sublime_text_windows() {
+inline void ten() {
 #ifndef ONLINE_JUDGE
 	freopen("input.txt", "r", stdin);
 	freopen("output.txt", "w", stdout);
@@ -12,7 +12,7 @@ void code() {
 }
 
 int main() {
-	sublime_text_windows();
+	ten();
 	int count;
 	std::cin >> count;
 	for (int i = 0; i < count; ++i)
