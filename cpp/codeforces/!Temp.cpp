@@ -2,8 +2,8 @@
 
 inline void ten() {
 #ifndef ONLINE_JUDGE
-	freopen("input.txt", "r", stdin);
-	freopen("output.txt", "w", stdout);
+	freopen("D:\\Sub\\input.txt", "r", stdin);
+	freopen("D:\\Sub\\output.txt", "w", stdout);
 #endif
 }
 
