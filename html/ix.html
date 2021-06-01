@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>index</title>
+</head>
+
+<body>
+	<script src="js/jquery.js"></script>
+	<script src="js/moment.min.js"></script>
+	<script src="js/combodate.js"></script>
+	<input type="text" id="datetime24" data-format="DD-MM-YYYY HH:mm" data-template="DD / MM / YYYY     HH : mm"
+		name="datetime" value="21-12-2012 20:30">
+	<script>
+		$(function () {
+			$('#datetime24').combodate();
+		});
+		$('input').combodate({
+			minYear: 1975,
+			maxYear: 2013,
+			minuteStep: 10
+		});
+	</script>
+</body>
+
+</html>

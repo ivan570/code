@@ -1,0 +1,1 @@
+﻿SELECT Course_Id, Course_Name FROM Course, Department dt WHERE Course.Department_Id = dt.Department_Id AND LOWER(dt.Hod_Username) = ''

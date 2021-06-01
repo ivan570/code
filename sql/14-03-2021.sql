@@ -1,0 +1,1 @@
+﻿Select status from(select Email, Password, '1' as status from student union all Select Email, Password, '2' as status from Teacher union all Select Username as Email, Password, '3' as status from Admin union all Select Hod_Username as Email, Hod_Password as Password, '4' as status from Department ) as dt where lower(dt.Email) = '1' and dt.Password = '1';
