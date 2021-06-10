@@ -27,13 +27,13 @@ public:
         name = str;
     }
 
-    void init_graph() {
+    void __init__() {
         list.resize(size);
     }
 
     void reinit_graph() {
         list.clear();
-        init_graph();
+        __init__();
     }
 
     Graph(int _size, string _name) {
@@ -44,6 +44,23 @@ public:
     void addEdge(int u, int v) {
         list[u].push_back(v);
         list[v].push_back(u);
+    }
+
+    void dfs(vector<bool> &visited, int start) {
+        if (!visited[start]) 
+            cout << start << " ";
+        visited[start] = true;
+        for (int &temp : list[start]) {
+            if (visited[temp] == false)
+                dfs(visited, temp);
+        }
+    }
+
+    void findDFS_REC(int start) {
+        cout << "rec dfs are ";
+        vector<bool> visited(size, false);
+        dfs(visited, start);
+        cout << "\n";
     }
 
     void findBFS(int start) {
@@ -130,7 +147,7 @@ public:
 int main() {
     Graph graph(5, "Graph_for_BFS");
 
-    graph.init_graph();
+    graph.__init__();
 
     graph.addEdge(0, 1);
     graph.addEdge(0, 2);
@@ -142,7 +159,7 @@ int main() {
         graph.findBFS(i);
     cout << "\n";
     for (int i = 0; i < 5; ++i)
-        graph.findDFS(i);
+        graph.findDFS_REC(i);
 
     return 0;
 }

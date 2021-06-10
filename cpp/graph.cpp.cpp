@@ -1,18 +1,17 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution {
-    static void printDeque(deque<int> de) {
-        cout << "printing deque ==> ";
-        while (!de.empty()) {
-            cout << de.front() << " ";
-            de.pop_front();
-        }
-        cout <<"\n";
-    }
-public:
-    static vector<int> get_max_of_subarray(vector<int> arr, int k) {
-        int n = arr.size();
+
+ // } Driver Code Ends
+
+
+class Solution
+{
+    public:
+    //Function to find maximum of each subarray of size k.
+    vector <int> max_of_subarrays(int *arr, int n, int k)
+    {
+        // int n = arr.size();
         int ret_index = 0;
         vector<int> ret(n - k + 1);
 
@@ -23,7 +22,7 @@ public:
             dq.push_back(i);
         }
 
-        printDeque(dq);
+        // printDeque(dq);
 
         for (int i = k; i < n; ++i) {
             ret[ret_index++] = arr[dq.front()];
@@ -43,13 +42,28 @@ public:
     }
 };
 
+// { Driver Code Starts.
+
 int main() {
-
-    vector<int> ret = Solution::get_max_of_subarray(vector<int> {8,5,10,7,9,4,15,12,90,13}, 4);
-
-    for (int &i : ret) {
-        cout << i << " ";
-    }
-    cout << "\n";
-    return 0;
-}
+	
+	int t;
+	cin >> t;
+	
+	while(t--){
+	    
+	    int n, k;
+	    cin >> n >> k;
+	    
+	    int arr[n];
+	    for(int i = 0;i<n;i++) 
+	        cin >> arr[i];
+	    Solution ob;
+	    vector <int> res = ob.max_of_subarrays(arr, n, k);
+	    for (int i = 0; i < res.size (); i++) 
+	        cout << res[i] << " ";
+	    cout << endl;
+	    
+	}
+	
+	return 0;
+}  // } Driver Code Ends
